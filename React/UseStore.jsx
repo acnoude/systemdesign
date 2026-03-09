@@ -7,13 +7,13 @@ interface UseStore{
     logout: () => void;
 }
 
-export const useUserStore= create<UseStore>((set)->{
-    userName : null;
-    isAuthenticated: false;
+export const useUserStore= create<UseStore>((set)=>({
+    userName : null,
+    isAuthenticated: false,
 
-    login : (name:string)=> set({userName: name , isAuthenticated: true}),
+    login : (name: string)=> set({userName: name , isAuthenticated: true}),
 
-    logout: () => set({userName: null, isAutheticated: false}),
+    logout: () => set({userName: null, isAuthenticated: false}),
 });
 
 
